@@ -40,7 +40,7 @@ export default function Gallery() {
       try {
         const headers = { Authorization: `Bearer ${authToken}` };
         await axios.post(
-          `${BASE_URL}/albums`,
+          `${BASE_URL}/album`,
           {
             name: albumName,
           },
