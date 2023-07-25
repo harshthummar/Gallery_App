@@ -24,7 +24,7 @@ export default function NavbarC() {
             "Authorization": `Bearer ${authToken}`
           },
         });
-        
+        alert("Logout Successfully.")
         removeToken()
         setIsLoggedIn(false);
         navigate("/");
@@ -51,6 +51,7 @@ export default function NavbarC() {
              
                 isLoggedIn ? (
                   <> 
+                      <Link to="/" className="nav-link">Home</Link>
                       <Link to="/fileupload" className="nav-link">FileUpload</Link>
                       <Link to="/gallery" className="nav-link" >Gallery</Link>
                       <Nav.Link onClick={handleLogout}>SignOut</Nav.Link>

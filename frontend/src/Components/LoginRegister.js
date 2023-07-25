@@ -66,7 +66,7 @@ export default function LoginRegister() {
         alert("Login successful:");
         setToken(response.data.token)
         setIsLoggedIn(true)
-        navigate('/gallery')
+        navigate('/')
       } catch (error) {
         alert("Invalid User");
       }
@@ -106,7 +106,7 @@ export default function LoginRegister() {
         alert("Registration successful:");
         setToken(response.data.token);
         setIsLoggedIn(true)
-         navigate('/gallery')
+         navigate('/')
       }
        catch (error) {
         alert("User is already register")

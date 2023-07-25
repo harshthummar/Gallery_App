@@ -8,10 +8,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginRegister from "./Components/LoginRegister";
 import  React,{useContext} from "react"
 import { UserContext } from "./UserContext";
+import Home from "./Components/Home";
+import PageNotFound from "./Components/PageNotFound";
 
 
 function App() {
   const { isLoggedIn} = useContext(UserContext);
+  
+
 
   return (
     <div className="App">
@@ -25,10 +29,17 @@ function App() {
               
               <Route path="/fileupload" element={<FileUpload />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/" element={<Home />} />
+              <Route path="*" element={<PageNotFound/>} />
             </>
           ) : (
-            <Route path="/" element={<LoginRegister />} />
+            <>
+                <Route path="/" element={<LoginRegister />} />
+                <Route path="*" element={<PageNotFound/>} />
+            </>
+            
           )}
+
         </Routes>
       </Router>
     </div>
